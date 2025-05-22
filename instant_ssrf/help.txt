@@ -1,2 +1,5 @@
 워드프레스 플러그인 instant images 4.6.2의 ssrf 취약점을 도커라이징했습니다. 
+
+docker-compose up --build으로 환경을 세팅합니다. 
+
 추가 예정
