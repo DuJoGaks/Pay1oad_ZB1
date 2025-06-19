@@ -1,0 +1,21 @@
+services:
+  db:
+    container_name: django_sqli_db
+    image: postgres:13
+    environment:
+      POSTGRES_DB: django_sqli
+      POSTGRES_USER: useruser
+      POSTGRES_PASSWORD: useruser
+    ports:
+      - "5432:5432"
+  web:
+    container_name: django_sqli_web
+    build: .
+    volumes:
+      - .:/App
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - DEBUG=True
